@@ -7,6 +7,7 @@ The key elements in this repo are:
 - **Bicep Modules:** These bicep modules provide "lego bricks" for assembling your infrastructure-as-code" deployments and are built to meet the specification of Government customers and impact levels.  
 - **Developer Scripts:** These scripts are designed to include common operations that are designed to provide "easy-buttons" to prevent having to lookup what each of these steps is, and how they work.  
 - **Github Composite Actions:** These are composite actions designed specifically to be atomic and reusable in a variety of situations.  The intention being that these are common steps to prevent technical debt, improve quality, and increase stability by leveraging a single code instance.  
+- **Packer VM Configuration:** These are packer images for specific virtual machines that are designed to support specific use-cases.  
 
 ## Bicep Modules
 
