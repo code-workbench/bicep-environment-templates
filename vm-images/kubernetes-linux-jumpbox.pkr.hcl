@@ -10,6 +10,18 @@ variable "location" {
   description = "Azure region for the image"
 }
 
+variable "managed_images_rg_name" {
+  type    = string
+  default = "packer-vm-images"
+  description = "Resource group name for the Packer VM images"
+}
+
+variable "managed_image_name" {
+  type    = string
+  default = "ubuntu2404-aks-linux-jumpbox-image"
+  description = "Name of the managed image to be created by Packer"
+}
+
 packer {
   required_plugins {
     azure = {
@@ -24,8 +36,8 @@ source "azure-arm" "ubuntu2404" {
   cloud_environment_name = "AzureUSGovernmentCloud"
   location               = var.location
 
-  managed_image_resource_group_name = "packer-vm-images"
-  managed_image_name                = "ubuntu2404-aks-linux-jumpbox-image"
+  managed_image_resource_group_name = var.managed_images_rg_name
+  managed_image_name                = var.managed_image_name
 
   vm_size           = "Standard_DS1_v2"
   os_type           = "Linux"
